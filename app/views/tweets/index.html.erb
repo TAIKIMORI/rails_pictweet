@@ -1,0 +1,11 @@
+<% @tweets.each do |tweet| %>
+  <p><% tweet.text %></p>
+  <p><% tweet.image %></p>
+<% end %>
+
+<div class="contents row" >
+  <% @tweets.each do |tweet| %>
+    <%= render partial: "tweet", locals: { tweet: tweet } %>
+  <% end %>
+  <%= paginate(@tweets) %>
+</div>
